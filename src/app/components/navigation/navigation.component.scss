@@ -1,0 +1,36 @@
+$colorShadow: #000A26;;
+$color-1: #7DA526;
+$color-2: rgb(172, 180, 153);
+$color-3: #fff;
+@import url('https://fonts.googleapis.com/css?family=Merriweather+Sans&display=swap');
+.nav {
+    width: 100%;
+    height: 4em;
+    ul{
+        display: flex;
+        float: right;
+        li {
+            list-style: none;
+            padding: 1rem;
+            a {
+                font-family: 'Merriweather Sans', sans-serif;
+                text-decoration: none;
+                color: $color-3;
+                font-size: 1.3em;
+                    &:hover{
+                        color: darken($color: $color-3 , $amount: 15)
+                    }
+            }
+            a.register {
+                border-radius: 20px;
+                border: 4px solid transparent;
+                background-image: linear-gradient($colorShadow, $colorShadow), radial-gradient(circle at top left, $color-1, $color-2 );
+                background-origin: border-box;
+                background-clip: content-box,border-box;
+                span {
+                    padding: 12px 22px;
+                    }
+            }
+        }
+    }
+}
