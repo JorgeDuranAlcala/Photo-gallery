@@ -1,9 +1,40 @@
-import { Injectable } from '@angular/core';
+import { Injectable } from '@angular/core'
+import { HttpClient } from '@angular/common/http';
+import { IPhoto } from '../interfaces/Photo';
+
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class PhotoService {
 
-  constructor() { }
+  url: string = `http://localhost:3000/api/photos`;
+
+  constructor(private http: HttpClient) {
+   }
+
+   addPhoto(title: string, description: string, image: File) {
+     const fd = new FormData();
+     fd.append('title', title)
+     fd.append('description', description)
+     fd.append('image', image)
+     return this.http.post<IPhoto>(this.url, fd)
+   }
+
+   allPhotos() {
+     return this.http.get<IPhoto>(this.url)
+   }
+
+   getPhoto(id: string) {
+     return this.http.get<IPhoto>(`${this.url}/${id}`)
+   }
+
+   updatePhoto(id: string, title: string, description: string) {
+      return this.http.put<IPhoto>(`${this.url}/${id}`, { title, description })
+   }
+
+   deletePhoto(id: string) {
+      return this.http.delete<IPhoto>(`${this.url}/${id}`)
+   }
 }

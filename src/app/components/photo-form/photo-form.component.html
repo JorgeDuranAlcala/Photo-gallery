@@ -1,1 +1,23 @@
-<p>photo-form works!</p>
+<div class="row justify-content-center">
+  <div class="col-md-4">
+      <div class="card">
+        <div class="card-body">
+          <form class="form" (submit)="onSubmit(title, description, photoSelected)">
+            <div class="form-group">
+              <input class="form-control" type="text" required #title placeholder="title">
+            </div>
+            <div class="form-group">
+              <textarea class="form-control" name="" id="" cols="5" rows="5" required 
+              placeholder="description" #description
+              ></textarea>
+            </div>
+            <div class="form-group">
+              <input class="form-control" hidden type="file" (change)="onPhotoSelected($event)"  required #inputFile >
+            </div>
+            <img [src]=" photoSelected || 'assets/Upload.png' " class="img-fluid my-2" (click)="inputFile.click()" alt="">
+            <button class="btn btn-primary btn-block" type="submit" >Upload</button>
+          </form>
+        </div>
+    </div>
+  </div>
+</div>

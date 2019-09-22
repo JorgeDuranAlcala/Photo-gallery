@@ -7,10 +7,11 @@ import { PhotoPreviewComponent } from './components/photo-preview/photo-preview.
 
 
 const routes: Routes = [
-  { path:'', component: HomeComponent },
+  { path:'', redirectTo: 'home', pathMatch:'full'},
+  { path: 'home', component: HomeComponent },
   { path:'photos', component: PhotoListComponent },
   { path:'addPhotos', component: PhotoFormComponent },
-  { path:'previewPhoto', component: PhotoPreviewComponent }
+  { path:'previewPhoto/:id', component: PhotoPreviewComponent }
 ];
 
 @NgModule({

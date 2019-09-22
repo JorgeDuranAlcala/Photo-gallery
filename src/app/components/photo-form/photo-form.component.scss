@@ -1,0 +1,16 @@
+$color-1:#87f708;
+$color-2:#78ffd6;
+
+
+.card {
+    margin-top: 1.2rem;
+    -webkit-box-shadow: 21px 19px 19px 19px rgba(0,0,0,0.06);
+-moz-box-shadow: 21px 19px 19px 19px rgba(0,0,0,0.06);
+box-shadow: 21px 19px 19px 19px rgba(0,0,0,0.06);
+}
+
+img {
+    position: relative;
+    width: 60%;
+    left: 80px;
+}

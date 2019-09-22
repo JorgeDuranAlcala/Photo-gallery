@@ -8,6 +8,8 @@ import { HomeComponent } from './components/home/home.component';
 import { PhotoListComponent } from './components/photo-list/photo-list.component';
 import { PhotoFormComponent } from './components/photo-form/photo-form.component';
 import { PhotoPreviewComponent } from './components/photo-preview/photo-preview.component';
+import { HttpClientModule } from '@angular/common/http';
+import { RouterLink } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { PhotoPreviewComponent } from './components/photo-preview/photo-preview.
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
