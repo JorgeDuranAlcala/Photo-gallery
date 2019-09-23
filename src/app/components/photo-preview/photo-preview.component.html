@@ -2,7 +2,9 @@
     <div class="row">
     
         <div class="col-4">
-            <img class="img-fluid p-2" [src]=" 'http://localhost:3000/'+ photoToEdit.imagePath " alt="no image">
+            <img class="img-fluid p-2" [src]=" photoSelected || 'http://localhost:3000/'+ photoToEdit.imagePath" 
+            (click)="imageToUpdate.click()"
+            alt="no image">
             <div class="row justify-content-center">
                 <div class="col-4 p-2">
                     <div (click)="deletePhoto()" class="btn btn-danger btn-block">Delete</div>
@@ -18,10 +20,11 @@
                                   <input class="form-control" type="text"  #title [placeholder]="photoToEdit.title">
                                 </div>
                                 <div class="form-group">
-                                  <textarea class="form-control" name="" id="" cols="10" rows="10"
+                                  <textarea class="form-control" cols="10" rows="10"
                                   [placeholder]="photoToEdit.description" #description
                                   ></textarea>
                                 </div>
+                                <input type="file" (change)="toUpdateImg($event)" #imageToUpdate class="d-none">
                                 <button class="btn btn-success btn-block" type="submit" >Edit</button>
                         </form>
                 </div>

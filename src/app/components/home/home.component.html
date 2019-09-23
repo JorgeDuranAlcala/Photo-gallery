@@ -2,7 +2,7 @@
 <div class="container p-4">
     <div class="row">
         <div class="card-columns">
-            <div class="card" *ngFor="let photo of photoList">
+            <div class="card animated fadeInDown delay-1 slow" *ngFor="let photo of photoList">
                 <img [src]=" 'http://localhost:3000/' + photo.imagePath " 
                  (click)="photoPreview(photo._id)" class="card-img-top" alt="no image">
                 <div class="card-body">

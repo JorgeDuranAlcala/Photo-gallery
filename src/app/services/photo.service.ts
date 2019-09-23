@@ -30,8 +30,13 @@ export class PhotoService {
      return this.http.get<IPhoto>(`${this.url}/${id}`)
    }
 
-   updatePhoto(id: string, title: string, description: string) {
-      return this.http.put<IPhoto>(`${this.url}/${id}`, { title, description })
+   updatePhoto(id: string, title: string, description: string, image: File) {
+      const fd = new FormData()
+      fd.append('title', title)
+      fd.append('description', description)
+      fd.append('image', image)
+
+      return this.http.put<IPhoto>(`${this.url}/${id}`, fd)
    }
 
    deletePhoto(id: string) {

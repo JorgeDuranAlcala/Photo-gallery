@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { PhotoService } from 'src/app/services/photo.service';
 import { ActivatedRoute, Router } from "@angular/router";
 import { IPhoto } from 'src/app/interfaces/Photo';
+import { HtmlInputEvent } from 'src/app/interfaces/inputEvent';
+
 
 @Component({
   selector: 'app-photo-preview',
@@ -11,6 +13,8 @@ import { IPhoto } from 'src/app/interfaces/Photo';
 export class PhotoPreviewComponent implements OnInit {
 
   photoToEdit: IPhoto;
+  file: File;
+  photoSelected: string | ArrayBuffer;
 
   constructor(private service: PhotoService,
              private activatedRoute: ActivatedRoute,
@@ -37,12 +41,24 @@ export class PhotoPreviewComponent implements OnInit {
 
   updatePhoto(title: HTMLInputElement, description: HTMLTextAreaElement): boolean {
       this.activatedRoute.params.subscribe( parms => {
-        this.service.updatePhoto(parms.id, title.value, description.value)
+        this.service.updatePhoto(parms.id, title.value, description.value, this.file)
         .subscribe( res => {
           this.router.navigate(['/home'])
         }, error => console.log(error))
       })
-      return false
+      return  false
+  }
+
+  toUpdateImg(event: HtmlInputEvent): void {
+      if(event.target.files && event.target.files[0]) {
+          this.file = event.target.files[0]
+          // IMAGE PREVIEW
+          const reader = new FileReader()
+          reader.onload = e => {
+              this.photoSelected =  reader.result
+          }
+          reader.readAsDataURL(this.file)
+      }
   }
 
 }
