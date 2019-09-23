@@ -53,15 +53,24 @@ $color-5:#78ffd6;
   display: flex;
   justify-content: flex-end;
   width: 100%;
+  text-align: center;
 
   ul {
     list-style: none;
-
+    .active {
+      background: darken($color: $color-5, $amount: 15);
+        &:hover {
+            background: lighten($color: $colorA, $amount: 90);
+            color: rgba(0, 0, 0, 0.6);
+        }
+    }
     a {
+      display: flex;
+      justify-content: center;
       text-decoration: none;
       font-family: 'Roboto', sans-serif;
       color: rgba(0, 0, 0, 0.6);
-      padding: 1.5em;
+      padding: 0.5em 1em;
 
       &:hover {
         color: lighten($color: $colorA, $amount: 50);

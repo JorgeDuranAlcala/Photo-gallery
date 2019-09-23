@@ -10,6 +10,8 @@ import { PhotoFormComponent } from './components/photo-form/photo-form.component
 import { PhotoPreviewComponent } from './components/photo-preview/photo-preview.component';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterLink } from '@angular/router';
+import { SignUpComponent } from './components/sign-up/sign-up.component';
+import { LogInComponent } from './components/log-in/log-in.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { RouterLink } from '@angular/router';
     HomeComponent,
     PhotoListComponent,
     PhotoFormComponent,
-    PhotoPreviewComponent
+    PhotoPreviewComponent,
+    SignUpComponent,
+    LogInComponent
   ],
   imports: [
     BrowserModule,
