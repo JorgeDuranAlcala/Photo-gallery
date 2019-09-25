@@ -10,6 +10,14 @@ export class NavigationComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+
   }
+
+  onScroll() {
+    console.log('works');
+    
+  }
+
+  
 
 }

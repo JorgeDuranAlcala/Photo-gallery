@@ -1,5 +1,10 @@
 
-<nav class="nav">
+<nav (scroll)="onScroll()" class="nav sticky">
+    <a class="Photo-Gallery" href="#">Photo-Gallery</a>
+    
+    <div class="recA"></div>
+    <div class="recB"></div>
+
     <ul class="navbar text-align-center">
         <li><a [routerLink]="['/']">Home</a></li>
         <li><a [routerLink]="[ '/photos']">All Photos</a></li>
@@ -10,8 +15,4 @@
 </nav>
 
 
-    <a class="Photo-Gallery" href="#">Photo-Gallery</a>
-
-<div class="recA"></div>
-<div class="recB"></div>
 

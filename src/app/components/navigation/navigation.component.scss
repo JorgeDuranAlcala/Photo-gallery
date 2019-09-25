@@ -58,7 +58,7 @@ $color-5:#78ffd6;
   ul {
     list-style: none;
     .active {
-      background: darken($color: $color-5, $amount: 15);
+      background: darken($color: $color-5, $amount: 25);
         &:hover {
             background: lighten($color: $colorA, $amount: 90);
             color: rgba(0, 0, 0, 0.6);
@@ -78,4 +78,11 @@ $color-5:#78ffd6;
       }
     }
   }
+}
+
+.sticky {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
 }
