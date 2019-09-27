@@ -6,12 +6,13 @@ import { PhotoFormComponent } from './components/photo-form/photo-form.component
 import { PhotoPreviewComponent } from './components/photo-preview/photo-preview.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { LogInComponent } from './components/log-in/log-in.component';
+import { AuthGuard } from './auth/auth.guard';
 
 
 const routes: Routes = [
   { path:'', redirectTo: 'home', pathMatch:'full'},
   { path: 'home', component: HomeComponent },
-  { path:'photos', component: PhotoListComponent },
+  { path:'photos', component: PhotoListComponent,  canActivate: [AuthGuard]  },
   { path:'addPhotos', component: PhotoFormComponent },
   { path:'previewPhoto/:id', component: PhotoPreviewComponent },
   { path:'signUp', component: SignUpComponent },

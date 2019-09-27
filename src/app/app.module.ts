@@ -8,10 +8,13 @@ import { HomeComponent } from './components/home/home.component';
 import { PhotoListComponent } from './components/photo-list/photo-list.component';
 import { PhotoFormComponent } from './components/photo-form/photo-form.component';
 import { PhotoPreviewComponent } from './components/photo-preview/photo-preview.component';
-import { HttpClientModule } from '@angular/common/http';
-import { RouterLink } from '@angular/router';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { LogInComponent } from './components/log-in/log-in.component';
+import { UserService } from './services/user.service';
+import { PhotoService } from './services/photo.service';
+import { AuthGuard } from './auth/auth.guard';
+import { TokenInterceptorService } from './services/token-interceptor.service';
 
 @NgModule({
   declarations: [
@@ -30,7 +33,13 @@ import { LogInComponent } from './components/log-in/log-in.component';
     HttpClientModule,
     
   ],
-  providers: [],
+  providers: [ UserService, AuthGuard ,PhotoService,
+  {
+    provide: HTTP_INTERCEPTORS,
+    useClass: TokenInterceptorService,
+    multi: true
+  }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

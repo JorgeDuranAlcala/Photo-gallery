@@ -11,24 +11,13 @@ import { Router } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
 
-  photoList: IPhoto;
 
-  constructor(private service: PhotoService, private router: Router) { }
+  constructor() { }
 
   ngOnInit() {
-      this.service.allPhotos()
-      .subscribe( 
-        r => {
-          this.photoList = r
-          console.log(this.photoList) 
-        }
-         ,
-        error => console.log(error)
-        )
+    
   }
 
-  photoPreview(id: string): Promise<boolean> {
-      return this.router.navigate([`/previewPhoto/${id}`])
-  }
+  
 
 }

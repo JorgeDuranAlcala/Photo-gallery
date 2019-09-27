@@ -1,6 +1,6 @@
 
 <nav (scroll)="onScroll()" class="nav sticky">
-    <a class="Photo-Gallery" href="#">Photo-Gallery</a>
+    <a class="Photo-Gallery" [routerLink]="['/']">Photo-Gallery</a>
     
     <div class="recA"></div>
     <div class="recB"></div>
@@ -9,8 +9,9 @@
         <li><a [routerLink]="['/']">Home</a></li>
         <li><a [routerLink]="[ '/photos']">All Photos</a></li>
         <li><a [routerLink]="[ '/addPhotos']">Upload</a></li>
-        <li><a [routerLink]="[ '/logIn']">Log In</a></li>
-        <li><a class="active" [routerLink]="[ '/signUp']">Sign Up</a></li>
+        <li><a *ngIf="!authService.loggedIn()" [routerLink]="[ '/logIn']">Log In</a></li>
+        <li><a *ngIf="!authService.loggedIn()" class="active" [routerLink]="[ '/signUp']">Sign Up</a></li>
+        <li><a *ngIf="authService.loggedIn()" style="cursor: pointer" (click)="authService.logoutUser()" >Log Out</a></li>
     </ul>
 </nav>
 

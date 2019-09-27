@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row">
     
-        <div class="col-4">
+        <div class="col-4 animated fadeInDown slow">
             <img class="img-fluid p-2" [src]=" photoSelected || 'http://localhost:3000/'+ photoToEdit.imagePath" 
             (click)="imageToUpdate.click()"
             alt="no image">
@@ -13,7 +13,7 @@
         </div>
                 
         <div class="col-8 p-4">
-            <div class="card">
+            <div class="card animated fadeInDown slow">
                 <div class="card-body">
                         <form class="form" (submit)="updatePhoto(title, description)" >
                                 <div class="form-group">

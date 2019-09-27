@@ -8,45 +8,7 @@ $color-5:#78ffd6;
 
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 
-.Photo-Gallery {
-  position: absolute;
-  width: 200px;
-  height: 31px;
-  left: 68px;
-  top: 15px;
 
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 24px;
-  line-height: 28px;
-
-  color: rgba(0, 0, 0, 0.7);
-}
-
-.recA {
-  position: absolute;
-  width: 5.29px;
-  height: 16.77px;
-  left: 228.15px;
-  top: 10px;
-
-  background: #09EEA9;
-  border-radius: 10px;
-  transform: matrix(0.68, 0.55, -1.02, 0.65, 0, 0);
-}
-
-.recB {
-  position: absolute;
-  width: 5.29px;
-  height: 16.77px;
-  left: 224.15px;
-  top: 3px;
-
-  background: $color-5;
-  border-radius: 10px;
-  transform: matrix(0.68, 0.55, -1.02, 0.65, 0, 0);
-}
 
 .nav {
   background-color: lighten($color: $colorA, $amount: 90);
@@ -54,6 +16,52 @@ $color-5:#78ffd6;
   justify-content: flex-end;
   width: 100%;
   text-align: center;
+  
+  .recA {
+    position: absolute;
+    width: 5.29px;
+    height: 16.77px;
+    left: 254.15px;
+    top: 10px;
+  
+    background: #09EEA9;
+    border-radius: 10px;
+    transform: matrix(0.68, 0.55, -1.02, 0.65, 0, 0);
+  }
+  
+  .recB {
+    position: absolute;
+    width: 5.29px;
+    height: 16.77px;
+    left: 249.15px;
+    top: 3px;
+  
+    background: $color-5;
+    border-radius: 10px;
+    transform: matrix(0.68, 0.55, -1.02, 0.65, 0, 0);
+  }
+
+  .Photo-Gallery {
+
+    &:hover{
+      color: lighten($color: $colorA, $amount: 50);
+      text-shadow: 1px 1px lighten($color: $colorA, $amount: 90)
+    }
+
+    position: absolute;
+    width: 200px;
+    height: 31px;
+    left: 68px;
+    top: 15px;
+  
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 28px;
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.7);
+  }
 
   ul {
     list-style: none;
@@ -74,7 +82,7 @@ $color-5:#78ffd6;
 
       &:hover {
         color: lighten($color: $colorA, $amount: 50);
-        text-shadow: 2px 2px lighten($color: $colorA, $amount: 90);
+        text-shadow: 1px 1px lighten($color: $colorA, $amount: 90);
       }
     }
   }

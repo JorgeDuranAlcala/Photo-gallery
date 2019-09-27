@@ -1,19 +1,22 @@
-<div class="row justify-content-center">
+<div class="row justify-content-center ">
         <div class="col-md-4">
-            <div class="card my-4 animated fadeInDown slow">
+            <div class="card my-4 animated fadeInDown slow ">
+                <div class="card-header">
+                    <h4>Register</h4>
+                </div>
                 <div class="card-body">
                     <form (submit)="registerNewUser(username,email,password)" >
                         <div class="form-group">
-                            <input type="text" placeholder="Username" class="form-control" #username required>
+                            <input type="text" placeholder="Username" class="form-control" minlength="6" #username required>
                         </div>
                         <div class="form-group">
-                            <input type="text" placeholder="Email" class="form-control" #email required>
+                            <input type="text" placeholder="Email" class="form-control" #email minlength="6"   required>
                         </div>
                         <div class="form-group">
-                            <input type="password" placeholder="Password" class="form-control" #password  required>
+                            <input type="password" placeholder="Password" class="form-control" #password minlength="6"  required>
                         </div>
                         <div class="form-group">
-                            <input type="password" placeholder="Repeat password" class="form-control" required>
+                            <input type="password" placeholder="Repeat password" class="form-control" #repeatPassword minlength="6" required>
                         </div>
                         <button class="btn btn-primary btn-block" type="submit">
                             Sign Up

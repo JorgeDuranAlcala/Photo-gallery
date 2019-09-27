@@ -17,7 +17,8 @@ export class LogInComponent implements OnInit {
   logInuser(email: HTMLInputElement, password: HTMLInputElement): boolean {
       this.service.logInUser(email.value, password.value)
       .subscribe( r => {
-        this.route.navigate(['/home'])
+        localStorage.setItem('token', r.token)
+        this.route.navigate(['/photos'])
       }, e => console.error(e))
 
       return false

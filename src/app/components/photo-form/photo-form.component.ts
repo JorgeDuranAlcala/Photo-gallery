@@ -34,7 +34,7 @@ export class PhotoFormComponent implements OnInit {
       this.service.addPhoto(title.value, description.value, this.file)
       .subscribe( r => {
         console.log(r)
-        this.router.navigate(['/home'])
+        this.router.navigate(['/photos'])
       },
       error => console.log(error))
       return false
