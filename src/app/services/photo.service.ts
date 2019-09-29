@@ -10,6 +10,7 @@ import { IPhoto } from '../interfaces/Photo';
 export class PhotoService {
 
   url: string = `http://localhost:3000/api/photos`;
+  cargando: boolean = true;
 
   constructor(private http: HttpClient) {
    }

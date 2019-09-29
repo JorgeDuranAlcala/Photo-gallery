@@ -11,16 +11,17 @@ import { HttpErrorResponse } from '@angular/common/http';
 })
 export class PhotoListComponent implements OnInit {
 
-  photoList: IPhoto;  
+  photoList: IPhoto;
 
-  constructor(private service: PhotoService,
+  constructor(public service: PhotoService,
               private router: Router) { }
 
   ngOnInit() {
     this.service.allPhotos()
       .subscribe( 
         r => {
-        this.photoList = r
+          this.photoList = r
+          this.service.cargando = false
         }
          ,
         error => {
@@ -33,8 +34,16 @@ export class PhotoListComponent implements OnInit {
         )
   }
 
-  photoPreview(id: string): Promise<boolean> {
+photoPreview(id: string): Promise<boolean> {
     return this.router.navigate([`/previewPhoto/${id}`])
+}
+
+addStl(body: HTMLDivElement) {
+    body.classList.remove('d-none')
+}
+
+disabledContent(body: HTMLDivElement) {
+  body.classList.add('d-none')
 }
 
 }

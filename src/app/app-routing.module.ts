@@ -13,7 +13,7 @@ const routes: Routes = [
   { path:'', redirectTo: 'home', pathMatch:'full'},
   { path: 'home', component: HomeComponent },
   { path:'photos', component: PhotoListComponent,  canActivate: [AuthGuard]  },
-  { path:'addPhotos', component: PhotoFormComponent },
+  { path:'addPhotos', component: PhotoFormComponent, canActivate: [AuthGuard] },
   { path:'previewPhoto/:id', component: PhotoPreviewComponent },
   { path:'signUp', component: SignUpComponent },
   { path: 'logIn', component: LogInComponent }
