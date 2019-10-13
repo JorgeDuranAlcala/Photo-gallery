@@ -1,5 +1,5 @@
 
-<nav (scroll)="onScroll()" class="nav sticky">
+<nav (scroll)="onScroll()" class="navi sticky">
     <a class="Photo-Gallery" [routerLink]="['/']">Photo-Gallery</a>
     
     <div class="recA"></div>
@@ -8,7 +8,7 @@
     <ul class="navbar text-align-center">
         <li><a [routerLink]="['/']">Home</a></li>
         <li><a [routerLink]="[ '/photos']">All Photos</a></li>
-        <li><a [routerLink]="[ '/addPhotos']">Upload</a></li>
+        <li><a  [routerLink]="[ '/addPhotos']" [ngClass]="{'active': authService.loggedIn()}" >Upload</a></li>
         <li><a *ngIf="!authService.loggedIn()" [routerLink]="[ '/logIn']">Log In</a></li>
         <li><a *ngIf="!authService.loggedIn()" class="active" [routerLink]="[ '/signUp']">Sign Up</a></li>
         <li><a *ngIf="authService.loggedIn()" style="cursor: pointer" (click)="authService.logoutUser()" >Log Out</a></li>

@@ -12,7 +12,7 @@ import { AuthGuard } from './auth/auth.guard';
 const routes: Routes = [
   { path:'', redirectTo: 'home', pathMatch:'full'},
   { path: 'home', component: HomeComponent },
-  { path:'photos', component: PhotoListComponent,  canActivate: [AuthGuard]  },
+  { path:'photos', component: PhotoListComponent  },
   { path:'addPhotos', component: PhotoFormComponent, canActivate: [AuthGuard] },
   { path:'previewPhoto/:id', component: PhotoPreviewComponent },
   { path:'signUp', component: SignUpComponent },

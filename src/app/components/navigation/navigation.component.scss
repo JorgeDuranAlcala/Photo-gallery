@@ -5,13 +5,14 @@ $color-2: rgb(172, 180, 153);
 $color-3: #fff;
 $color-4:#a8ff78;
 $color-5:#78ffd6;
+$color-6:rgb(241, 229, 229);
 
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 
 
 
-.nav {
-  background-color: lighten($color: $colorA, $amount: 90);
+.navi {
+  background-color: darken($color: $color-3, $amount: 3);
   display: flex;
   justify-content: flex-end;
   width: 100%;

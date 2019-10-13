@@ -8,9 +8,12 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class NavigationComponent implements OnInit {
 
+  
+
   constructor(private authService: UserService) { }
 
   ngOnInit() {
+
 
   }
 

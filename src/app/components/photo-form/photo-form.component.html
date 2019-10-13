@@ -14,10 +14,12 @@
             <div class="form-group">
               <input class="form-control" hidden type="file" (change)="onPhotoSelected($event)"  required #inputFile >
             </div>
-            <img [src]=" photoSelected || 'assets/Upload.png' " class="img-fluid my-2" (click)="inputFile.click()" alt="">
+            <img [src]=" photoSelected || 'assets/img/upload.svg' " class="img-fluid" (click)="inputFile.click()" alt="">
             <button class="btn btn-primary btn-block" type="submit" >Upload</button>
           </form>
         </div>
+      </div>
     </div>
   </div>
-</div>
+  
+  <div>Icons made by <a href="https://www.flaticon.com/authors/inipagistudio" title="inipagistudio">inipagistudio</a> from <a href="https://www.flaticon.com/"             title="Flaticon">www.flaticon.com</a></div>
