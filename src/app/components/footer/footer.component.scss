@@ -1,0 +1,13 @@
+.back {
+    background: #023E42;
+    z-index: -1;
+}
+.contenedor {
+    background: #023E42;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 100px);
+
+    transform: skewY(4deg);
+
+}

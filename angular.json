@@ -29,7 +29,8 @@
             ],
             "styles": [
               "src/styles.scss",
-              "node_modules/sal.js/dist/sal.css"
+              "node_modules/sal.js/dist/sal.css",
+              "node_modules/font-awesome/scss/font-awesome.scss"
             ],
             "scripts": [
               "node_modules/sal.js/dist/sal.js"

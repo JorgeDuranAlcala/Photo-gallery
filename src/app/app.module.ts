@@ -17,6 +17,7 @@ import { UserService } from './services/user.service';
 import { PhotoService } from './services/photo.service';
 import { AuthGuard } from './auth/auth.guard';
 import { TokenInterceptorService } from './services/token-interceptor.service';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { TokenInterceptorService } from './services/token-interceptor.service';
     PhotoFormComponent,
     PhotoPreviewComponent,
     SignUpComponent,
-    LogInComponent
+    LogInComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
