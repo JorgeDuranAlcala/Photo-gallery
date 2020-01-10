@@ -9,7 +9,7 @@ import { IPhoto } from '../interfaces/Photo';
 })
 export class PhotoService {
 
-  url: string = `http://localhost:3000/api/photos`;
+  url: string = `http://localhost:3100/api/photos`;
   cargando: boolean = true;
 
   constructor(private http: HttpClient) {
@@ -24,7 +24,7 @@ export class PhotoService {
    }
 
    allPhotos() {
-     return this.http.get<IPhoto>(this.url)
+     return this.http.get<IPhoto[]>(this.url)
    }
 
    getPhoto(id: string) {

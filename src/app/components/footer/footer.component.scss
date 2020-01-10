@@ -1,13 +1,20 @@
-.back {
-    background: #023E42;
-    z-index: -1;
-}
 .contenedor {
-    background: #023E42;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(3, 100px);
+	width: 100%;
+}
 
-    transform: skewY(4deg);
+.footer .row {
+	padding: 4vmin 8vmin;
+}
 
+.footer .row ul li {
+	color: white;
+	text-decoration: none;
+	list-style: none;
+	font-family: 'Roboto';
+	font-size: 1.5em;
+	text-transform: uppercase;
+}
+
+.footer:last-child {
+	background:rgba(0,0,0,0.9);
 }

@@ -11,16 +11,23 @@ import * as sal from "sal.js";
 })
 export class HomeComponent implements OnInit {
 
+  photos: IPhoto[];
 
-  constructor() { }
+  constructor(private service: PhotoService,) { }
 
   ngOnInit() {
     sal({
-      threshold: 1,
+      threshold: 0.2,
       once: false
     })
-  }
 
+    this.service.allPhotos()
+    .subscribe( r => {
+      this.photos = r
+      console.log(this.photos);
+    })
+    
+  }
 
 
   

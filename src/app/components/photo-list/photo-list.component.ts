@@ -11,7 +11,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 })
 export class PhotoListComponent implements OnInit {
 
-  photoList: IPhoto;
+  photoList: IPhoto[];
 
   constructor(public service: PhotoService,
               private router: Router) { }

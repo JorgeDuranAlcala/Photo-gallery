@@ -1,74 +1,18 @@
 <main>
     <section>
-        <div class="cont-1" data-sal="fade"
-        data-sal-delay="200"
-        data-sal-duration="1000"
-        data-sal-easing="ease-out">
-            <h1>Upload your favorites photos</h1>
-            <p>You will can save all of your photos in this Gallery</p>
-            <a class="btn" [routerLink]="[ '/signUp']" >
-                <span>
-                    Get started
-                </span>
-            </a>
-            <a class="btn2" [routerLink]="[ '/photos']">
-                <span>
-                    See photos
-                </span>
-            </a>
-        </div>
-        <img  
-        data-sal="slide-down" 
-        data-sal-delay="200" 
-        data-sal-easing="ease-out" 
-        data-sal-duration="1000" src="assets/img/addFile.svg" alt="">
+        <h1 class="animated fadeInUp ">
+            Upload your Favorite photos
+        </h1>
     </section>
-    
-    <section>
-        <div class="one"
-        data-sal="fade"
-            data-sal-delay="600"
-            data-sal-easing="ease-out"
-            data-sal-duration="1000"
-        >
-            <img src="assets/img/update.svg" alt="no-image">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati iure ullam modi voluptas illo natus ducimus quas doloribus facere? Repellendus odit neque architecto voluptatibus possimus, nulla quae quaerat in eius.
+        <div class="container p-4" data-sal="slide-up" data-sal-easing="ease-out-back">
+            <div class="row">
+                <div class="card-columns">
+                    <div class="card shadow-lg"  *ngFor="let photo of photos">
+                        <img [src]=" 'http://localhost:3100/' + photo.imagePath " class="card-img-top" alt="no image"> 
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="two"
-        data-sal="fade"
-            data-sal-delay="600"
-            data-sal-easing="ease-out"
-            data-sal-duration="1000"
-        >
-            <img src="assets/img/hand.svg" alt="no-image">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi dolorum minima hic, tempora quos ratione nam esse maxime ducimus quis, ex illum alias praesentium sint repellendus assumenda totam aliquid. Ab!
-        </div>
-        <div class="three"
-        data-sal="fade"
-            data-sal-delay="600"
-            data-sal-easing="ease-out"
-            data-sal-duration="1000"
-        >
-            <img src="assets/img/products.svg" alt="no-image">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatem fuga et distinctio! Corporis deleniti natus, autem ex voluptatibus recusandae atque, esse mollitia delectus obcaecati quae fuga tempora perferendis provident alias.
-        </div>
-    </section>
-
-    <section>
-            <h3
-            data-sal="fade"
-            data-sal-delay="600"
-            data-sal-easing="ease-out"
-            data-sal-duration="1000"
-            >Start you free trial now! </h3>
-            <a 
-            data-sal="fade"
-            data-sal-delay="600"
-            data-sal-easing="ease-out"
-            data-sal-duration="1000"
-            [routerLink]="['/signUp']">Get started</a>
-    </section>
-
 </main>
 
 
