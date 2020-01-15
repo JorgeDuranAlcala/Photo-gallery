@@ -1,62 +1,49 @@
 $colorA: rgba(0, 0, 0, 0.6);
-;
-$color-1: #7DA526;
+$color-1: #7da526;
 $color-2: rgb(172, 180, 153);
 $color-3: #fff;
-$color-4:#a8ff78;
-$color-5:#78ffd6;
-$color-6:rgb(241, 229, 229);
+$color-4: #a8ff78;
+$color-5: #78ffd6;
+$color-6: rgb(241, 229, 229);
 
-@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
 
 
-
-.navi {
+  .navi {
   background-color: darken($color: $color-3, $amount: 3);
   display: flex;
   justify-content: flex-end;
+  align-items: center;
   width: 100%;
+  font-size: 20px;
   text-align: center;
-  box-shadow: 10px 0px 15px 0px rgba(0,0,0,0.2);
-  
-  .recA {
-    position: absolute;
-    width: 5.29px;
-    height: 16.77px;
-    left: 254.15px;
-    top: 10px;
-  
-    background: #09EEA9;
-    border-radius: 10px;
-    transform: matrix(0.68, 0.55, -1.02, 0.65, 0, 0);
-  }
-  
-  .recB {
-    position: absolute;
-    width: 5.29px;
-    height: 16.77px;
-    left: 249.15px;
-    top: 3px;
-  
-    background: $color-5;
-    border-radius: 10px;
-    transform: matrix(0.68, 0.55, -1.02, 0.65, 0, 0);
+
+  input[type="text"] {
+    max-width: 10.375em;
+    height: 1.75em;
+    width: 100%;
+    border: none;
+    margin-left: 1em;
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    font-size: 1.12em;
+    font-family: "Roboto";
+    padding: 0.3125rem;
   }
 
   .Photo-Gallery {
-
-    &:hover{
+    &:hover {
       color: lighten($color: $colorA, $amount: 50);
-      text-shadow: 1px 1px lighten($color: $colorA, $amount: 90)
+      text-shadow: 1px 1px lighten($color: $colorA, $amount: 90);
     }
 
     position: absolute;
     width: 200px;
     height: 31px;
-    left: 68px;
+    left: 18.1333vw;
     top: 15px;
-  
-    font-family: Roboto;
+    margin-top: 0.625rem;
+
+    font-family: 'Roboto';
     font-style: normal;
     font-weight: bold;
     font-size: 24px;
@@ -67,18 +54,19 @@ $color-6:rgb(241, 229, 229);
 
   ul {
     list-style: none;
+    margin-top: 1vmin;
     .active {
       background: darken($color: $color-5, $amount: 25);
-        &:hover {
-            background: lighten($color: $colorA, $amount: 90);
-            color: rgba(0, 0, 0, 0.6);
-        }
+      &:hover {
+        background: lighten($color: $colorA, $amount: 90);
+        color: rgba(0, 0, 0, 0.6);
+      }
     }
     a {
       display: flex;
       justify-content: center;
       text-decoration: none;
-      font-family: 'Roboto', sans-serif;
+      font-family: "Roboto", sans-serif;
       color: rgba(0, 0, 0, 0.6);
       padding: 0.5em 1em;
 
@@ -95,4 +83,80 @@ $color-6:rgb(241, 229, 229);
   top: 0;
   width: 100%;
   z-index: 1000;
+  box-shadow: 10px 0px 25px 0px rgba(0, 0, 0, 0.2);
 }
+
+.burger {
+  display: none;
+  font-size: 16px;
+}
+
+@media screen and (max-width: 785px) {
+  
+  .navi {
+    display: none;
+  }
+
+  .sticky {
+      background-color: whitesmoke;
+  }
+
+  .burger {
+    display: flex;
+    flex-direction: column;
+    font-size: 12px;
+    padding: 2em 1em;
+    width: 100%;
+    img {
+      max-width: 3.2em;
+      width: 90%;
+    }
+
+    input[type="text"] {
+      display: inline-block;
+      position: absolute;
+      left: 50%;
+      top: 30%;
+      max-width: 20.375em;
+      height: 2.75em;
+      width: 100%;
+      margin-left: 0.625em;
+    }
+      
+    ul {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      transition: 1s ease;
+      li {
+        list-style: none;
+        a {
+          text-decoration: none;
+          font-size: 1.5625em;
+          font-family: "Roboto", sans-serif;
+          color: rgba(0, 0, 0, 0.6);
+          &:hover {
+            color: lighten($color: $colorA, $amount: 50);
+            text-shadow: 1px 1px lighten($color: $colorA, $amount: 90);
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .burger {  
+    font-size: 8px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .burger {  
+    font-size: 6.3px;
+    input[type="text"] {
+      width: 70%;
+    }
+  }
+}
+

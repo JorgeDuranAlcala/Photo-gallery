@@ -1,11 +1,29 @@
 
 <nav (scroll)="onScroll()" class="navi sticky">
     <a class="Photo-Gallery" [routerLink]="['/']">Photo-Gallery</a>
-    
-    <div class="recA"></div>
-    <div class="recB"></div>
+
+    <input type="text" placeholder="search...." (search)="searchPhoto($event)" 
+        #searchText
+        [formControl]="control"
+        [(ngModel)]="searchText"
+    >
 
     <ul class="navbar text-align-center">
+        <li><a [routerLink]="['/']" routerLink="active">Home</a></li>
+        <li><a [routerLink]="[ '/photos']" routerLink="active">All Photos</a></li>
+        <li><a  [routerLink]="[ '/addPhotos']" [ngClass]="{'active': authService.loggedIn()}" >Upload</a></li>
+        <li><a *ngIf="!authService.loggedIn()" [routerLink]="[ '/logIn']" routerLink="active">Log In</a></li>
+        <li><a *ngIf="!authService.loggedIn()" class="active" [routerLink]="[ '/signUp']" routerLink="active">Sign Up</a></li>
+        <li><a *ngIf="authService.loggedIn()" style="cursor: pointer" (click)="authService.logoutUser()" >Log Out</a></li>
+    </ul>
+
+</nav>
+
+
+<nav class="burger sticky">
+    <input type="text" placeholder="search...." [ngClass]="{'d-none': !trigger}">
+    <img src="assets/img/menu.svg" (click)="toggleEffect()">
+    <ul class="navbar text-align-center" #navbar [ngClass]="{'d-none': trigger}">
         <li><a [routerLink]="['/']" routerLink="active">Home</a></li>
         <li><a [routerLink]="[ '/photos']" routerLink="active">All Photos</a></li>
         <li><a  [routerLink]="[ '/addPhotos']" [ngClass]="{'active': authService.loggedIn()}" >Upload</a></li>

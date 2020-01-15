@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, Renderer2, EventEmitter } from '@angular/core';
 import { UserService } from 'src/app/services/user.service';
+import { FormControl } from "@angular/forms";
 
 @Component({
   selector: 'app-navigation',
@@ -8,15 +9,25 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class NavigationComponent implements OnInit {
 
-  
+  trigger: boolean = true;
+  control: FormControl = new FormControl();
+  search: EventEmitter<string> = new EventEmitter<string>();
+  searchText
 
-  constructor(private authService: UserService) { }
+  constructor(private authService: UserService, private renderer2: Renderer2) { }
 
   ngOnInit() {
-
-
+      this.search.emit(this.searchText)
   }
 
+  searchPhoto(event: any) {
+      console.log(event)
+  }
+
+
+  toggleEffect() {
+        this.trigger = !this.trigger
+  }
   
 
 }

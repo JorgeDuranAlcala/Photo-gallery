@@ -14,7 +14,7 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path:'photos', component: PhotoListComponent, canActivate: [AuthGuard] , data: { animation: 'isRight' }  },
   { path:'addPhotos', component: PhotoFormComponent, data: { animation: 'isLeft' }  , canActivate: [AuthGuard] },
-  { path:'previewPhoto/:id', component: PhotoPreviewComponent },
+  { path:'previewPhoto/:id', component: PhotoPreviewComponent, data: { animation: 'isLeft' } },
   { path:'signUp', component: SignUpComponent, data: { animation: 'isLeft' } },
   { path: 'logIn', component: LogInComponent, data: { animation: 'isLeft' } }
 ];
