@@ -27,6 +27,10 @@ export class PhotoService {
      return this.http.get<IPhoto[]>(this.url)
    }
 
+   getPhotoUser() {
+     return this.http.get<IPhoto[]>(`${this.url}/user`)
+   }
+
    getPhoto(id: string) {
      return this.http.get<IPhoto>(`${this.url}/${id}`)
    }

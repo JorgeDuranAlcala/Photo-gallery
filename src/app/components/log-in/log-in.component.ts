@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from 'src/app/services/user.service';
 import { Router } from '@angular/router';
+import swal from "sweetalert2";
 
 @Component({
   selector: 'app-log-in',
@@ -23,5 +24,7 @@ export class LogInComponent implements OnInit {
 
       return false
   }
+
+  
 
 }

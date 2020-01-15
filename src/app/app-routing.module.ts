@@ -12,11 +12,11 @@ import { AuthGuard } from './auth/auth.guard';
 const routes: Routes = [
   { path:'', redirectTo: 'home', pathMatch:'full'},
   { path: 'home', component: HomeComponent },
-  { path:'photos', component: PhotoListComponent  },
-  { path:'addPhotos', component: PhotoFormComponent, canActivate: [AuthGuard] },
+  { path:'photos', component: PhotoListComponent, canActivate: [AuthGuard] , data: { animation: 'isRight' }  },
+  { path:'addPhotos', component: PhotoFormComponent, data: { animation: 'isLeft' }  , canActivate: [AuthGuard] },
   { path:'previewPhoto/:id', component: PhotoPreviewComponent },
-  { path:'signUp', component: SignUpComponent },
-  { path: 'logIn', component: LogInComponent }
+  { path:'signUp', component: SignUpComponent, data: { animation: 'isLeft' } },
+  { path: 'logIn', component: LogInComponent, data: { animation: 'isLeft' } }
 ];
 
 @NgModule({

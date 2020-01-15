@@ -3,6 +3,7 @@ import { PhotoService } from 'src/app/services/photo.service';
 import { IPhoto } from 'src/app/interfaces/Photo';
 import { Router } from '@angular/router';
 import * as sal from "sal.js";
+import { Lightbox, IAlbum } from 'ngx-lightbox';
 
 @Component({
   selector: 'app-home',
@@ -12,8 +13,11 @@ import * as sal from "sal.js";
 export class HomeComponent implements OnInit {
 
   photos: IPhoto[];
-
-  constructor(private service: PhotoService,) { }
+  _Album: IAlbum[] = [];
+  constructor(private service: PhotoService,
+              private _lightBox: Lightbox) {
+          
+      }
 
   ngOnInit() {
     sal({
@@ -24,12 +28,34 @@ export class HomeComponent implements OnInit {
     this.service.allPhotos()
     .subscribe( r => {
       this.photos = r
-      console.log(this.photos);
+        
+      this.photos.forEach((value, index) => {
+  
+        const src = `http://localhost:3100/${value.imagePath}`;
+        const caption =`${value.title}<br>${value.description}`;
+        const thumb = `${src}`;
+  
+        const album = {
+              src,
+              caption,
+              thumb
+          }
+          this._Album.push(album)
+      })
+      console.log(this._Album);
     })
+
+    
     
   }
-
-
+  
+  
+  /**
+   * open
+   */
+  public open(index: number) {
+      this._lightBox.open(this._Album,index, { wrapAround: true, showImageNumberLabel: true })
+  }
   
 
 }

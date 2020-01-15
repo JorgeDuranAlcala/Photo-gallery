@@ -3,6 +3,7 @@ import { PhotoService } from 'src/app/services/photo.service';
 import { Router } from '@angular/router';
 import { IPhoto } from 'src/app/interfaces/Photo';
 import { HttpErrorResponse } from '@angular/common/http';
+import { Lightbox, IAlbum } from 'ngx-lightbox';
 
 @Component({
   selector: 'app-photo-list',
@@ -11,17 +12,35 @@ import { HttpErrorResponse } from '@angular/common/http';
 })
 export class PhotoListComponent implements OnInit {
 
-  photoList: IPhoto[];
+  photoList: any;
+  Album: IAlbum[] = [];
 
   constructor(public service: PhotoService,
-              private router: Router) { }
+              private router: Router,
+              private _lightbox: Lightbox) { }
 
   ngOnInit() {
-    this.service.allPhotos()
+    this.service.getPhotoUser()
       .subscribe( 
         r => {
-          this.photoList = r
-          this.service.cargando = false
+          this.photoList = r;
+
+         this.photoList.forEach( photo => {
+            const src = `http://localhost:3100/${photo.imagePath}`;
+            const caption =`${photo.title}<br>${photo.description}`;
+            const thumb = `${src}`;
+
+            const album ={
+                src,
+                caption,
+                thumb
+            }
+
+            this.Album.push(album)
+            
+          })
+          this.service.cargando = false;
+          
         }
          ,
         error => {
@@ -38,12 +57,7 @@ photoPreview(id: string): Promise<boolean> {
     return this.router.navigate([`/previewPhoto/${id}`])
 }
 
-addStl(body: HTMLDivElement) {
-    body.classList.remove('d-none')
-}
-
-disabledContent(body: HTMLDivElement) {
-  body.classList.add('d-none')
-}
-
+ public open(index: number):void {
+      this._lightbox.open(this.Album, index, { wrapAround: true })
+ }
 }

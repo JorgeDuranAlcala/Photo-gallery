@@ -1,4 +1,9 @@
-<app-navigation></app-navigation>
-<router-outlet></router-outlet>
-<app-footer></app-footer>
+
+<main [@routeAnimations]="prepareRoute(outlet)" class="content">
+    <app-navigation></app-navigation>
+        <div *ngIf="loading" class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+    <router-outlet #outlet="outlet" ></router-outlet>
+    <app-footer></app-footer>
+</main>
+
 

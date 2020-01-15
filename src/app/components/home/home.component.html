@@ -4,11 +4,12 @@
             Upload your Favorite photos
         </h1>
     </section>
-        <div class="container p-4" data-sal="slide-up" data-sal-easing="ease-out-back">
+        <div class="container p-4" data-sal="fade" data-sal-easing="ease-out-back">
             <div class="row">
                 <div class="card-columns">
-                    <div class="card shadow-lg"  *ngFor="let photo of photos">
-                        <img [src]=" 'http://localhost:3100/' + photo.imagePath " class="card-img-top" alt="no image"> 
+                    <div class="card shadow-lg"  *ngFor="let photo of _Album; let i=index">
+                        <img [src]=" photo.thumb " [lightbox]="i"
+                        class="card-img-top" alt="no image" (click)="open(i)"> 
                     </div>
                 </div>
             </div>
