@@ -1,1 +1,18 @@
-<p>search works!</p>
+<div class="container p-4" *ngIf="!condition; else elseTemplate">
+    <div class="row">
+        <div class="card-columns">
+            <div class="card shadow-lg" *ngFor="let photo of _Album | searcher:text; let i=index">
+                <img [src]=" photo.thumb " [lightbox]="i"
+                class="card-img-top" alt="no image" (click)="open(i)"> 
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<ng-template #elseTemplate>
+    <div class="elseTemplate">
+        <p>You've not searched yet</p>
+    </div>
+</ng-template>
+  

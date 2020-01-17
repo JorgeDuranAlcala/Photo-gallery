@@ -22,6 +22,7 @@ import { AuthGuard } from './auth/auth.guard';
 import { TokenInterceptorService } from './services/token-interceptor.service';
 import { FooterComponent } from './components/footer/footer.component';
 import { SearchComponent } from './components/search/search.component';
+import { SearcherPipe } from './pipes/searcher.pipe';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { SearchComponent } from './components/search/search.component';
     SignUpComponent,
     LogInComponent,
     FooterComponent,
-    SearchComponent
+    SearchComponent,
+    SearcherPipe
   ],
   imports: [
     BrowserModule,

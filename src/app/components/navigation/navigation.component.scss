@@ -15,7 +15,7 @@ $color-6: rgb(241, 229, 229);
   justify-content: flex-end;
   align-items: center;
   width: 100%;
-  font-size: 20px;
+  font-size: 16px;
   text-align: center;
 
   input[type="text"] {
@@ -39,9 +39,9 @@ $color-6: rgb(241, 229, 229);
     position: absolute;
     width: 200px;
     height: 31px;
-    left: 18.1333vw;
+    left: 1em;
     top: 15px;
-    margin-top: 0.625rem;
+    margin-top: 0.625em;
 
     font-family: 'Roboto';
     font-style: normal;

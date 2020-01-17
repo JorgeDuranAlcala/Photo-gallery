@@ -2,10 +2,9 @@
 <nav (scroll)="onScroll()" class="navi sticky">
     <a class="Photo-Gallery" [routerLink]="['/']">Photo-Gallery</a>
 
-    <input type="text" placeholder="search...." (search)="searchPhoto($event)" 
-        #searchText
-        [formControl]="control"
-        [(ngModel)]="searchText"
+    <input type="text" placeholder="search...." [(ngModel)]="searchText"  
+    name="searchText"
+    (keyup)="searchPhoto()"
     >
 
     <ul class="navbar text-align-center">
