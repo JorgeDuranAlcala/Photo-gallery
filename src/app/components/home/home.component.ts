@@ -14,8 +14,11 @@ export class HomeComponent implements OnInit {
 
   photos: IPhoto[];
   _Album: IAlbum[] = [];
+  searchText: string = "";
+
   constructor(private service: PhotoService,
-              private _lightBox: Lightbox) {
+              private _lightBox: Lightbox,
+              private route: Router) {
           
       }
 
@@ -47,6 +50,13 @@ export class HomeComponent implements OnInit {
 
     
     
+  }
+
+
+  public searchPhoto(input: HTMLInputElement) 
+  {
+    console.log(input.value);
+    this.route.navigate([`/search/:${input.value}`])
   }
   
   

@@ -1,12 +1,21 @@
 <div class="container p-4" *ngIf="!condition; else elseTemplate">
     <div class="row">
         <div class="card-columns">
-            <div class="card shadow-lg" *ngFor="let photo of _Album | searcher:text; let i=index">
-                <img [src]=" photo.thumb " [lightbox]="i"
-                class="card-img-top" alt="no image" (click)="open(i)"> 
+            <div class="card shadow-lg" *ngFor="let photo of photos | searcher:text; let i=index">
+                <img [src]=" 'http://localhost:3100/'+ photo.imagePath"
+                class="card-img-top" alt="no image" (click)="open(photo.imagePath)"> 
             </div>
         </div>
     </div>
+</div>
+
+<div class="modal" [ngClass]="{'d-none': reveal, 'd-block': !reveal}" *ngFor="let photo of photos">
+    <!-- close button -->
+    <img src="" alt="" class="modal-content animated fadeIn" #photoPreview>
+    <div class="caption">
+        <p>{{photo.title}}</p>
+    </div>
+    <span class="close">&times</span>
 </div>
 
 

@@ -25,7 +25,7 @@ export class NavigationComponent implements OnInit {
   }
 
   searchPhoto() {
-      this.route.navigate([`search/:${this.searchText}`])
+      this.route.navigate([`/search/:${this.searchText}`])
   }
 
 

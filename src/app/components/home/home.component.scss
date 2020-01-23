@@ -1,3 +1,7 @@
+main {
+    font-size: 16px;
+}
+
 section {
  width: 100%;
  height: 100vh;
@@ -17,12 +21,38 @@ section:nth-of-type(1) {
     display: flex;
     justify-content: center;
     align-items: center;
-
+    flex-direction: column;
+    .input-box {
+        width: 39.9375em;
+        height: 3em;
+        position: relative;
+        input[type="text"] {
+            color:hsla(0, 0%, 0%, 0.87);
+            height: 100%;
+            width: 100%;
+            border: none;
+            margin-left: 1em;
+            border: 1px solid rgba(0, 0, 0, 0.25);
+            font-size: 1.12em;
+            font-family: 'Roboto';
+            padding: 1em;
+            outline: none;
+            border-radius: 1.25em;
+        }
+        
+        img {
+            width: 5%;
+            position: absolute;
+            right: 2px;
+            top: 8px;
+            cursor: pointer;
+        }
+    }
 }
 
 section:nth-of-type(1) > h1 {
     font-size: 4em;
-    margin-bottom: 15vmin;
+    margin-bottom: 8vmin;
     color: white;
-    line-height: 120%;
+    line-height: 1.24em;
 }
