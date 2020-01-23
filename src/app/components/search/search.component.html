@@ -3,19 +3,21 @@
         <div class="card-columns">
             <div class="card shadow-lg" *ngFor="let photo of photos | searcher:text; let i=index">
                 <img [src]=" 'http://localhost:3100/'+ photo.imagePath"
-                class="card-img-top" alt="no image" (click)="open(photo.imagePath)"> 
+                class="card-img-top" alt="no image" (click)="open(photo.imagePath, photo.title, photo.description)"> 
             </div>
         </div>
     </div>
 </div>
 
-<div class="modal" [ngClass]="{'d-none': reveal, 'd-block': !reveal}" *ngFor="let photo of photos">
+<div class="modal" [ngClass]="{'d-none': reveal, 'd-block': !reveal}" *ngFor="let photo of photos" (click)="close()">
     <!-- close button -->
-    <img src="" alt="" class="modal-content animated fadeIn" #photoPreview>
-    <div class="caption">
-        <p>{{photo.title}}</p>
-    </div>
-    <span class="close">&times</span>
+        <div class="card animated fadeIn">
+            <img [src]=" 'http://localhost:3100/' + src " alt="" class="card-img-top" #photoPreview>
+            <div class="card-footer ">
+                <p>{{ caption }}</p>
+                <button class="close">&times;</button>   
+            </div>
+        </div>
 </div>
 
 

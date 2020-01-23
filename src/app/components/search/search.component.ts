@@ -18,6 +18,8 @@ export class SearchComponent implements OnInit {
   _Album: IAlbum[] = [];
   condition: boolean;
   reveal: boolean = true;
+  src: string;
+  caption: string;
   @ViewChild('photoPreview', {static:false}) photoPreview: ElementRef;
 
   constructor(private route: ActivatedRoute,
@@ -64,10 +66,18 @@ export class SearchComponent implements OnInit {
   /**
    * open
    */
-  public open(src: string) {
+  public open(src: string, title: string, desc: string) {
+       this.src = src;
+       this.caption = `${title}, ${desc}`
        this.reveal = false;
-       this.renderer2.setProperty(this.photoPreview,'src', src)
     }
+
+  /**
+   * close
+   */
+  public close() {
+    this.reveal = true;
+  }
 
   
 }
