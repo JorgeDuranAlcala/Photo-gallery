@@ -23,10 +23,6 @@ export class HomeComponent implements OnInit {
       }
 
   ngOnInit() {
-    sal({
-      threshold: 0.2,
-      once: false
-    })
 
     this.service.allPhotos()
     .subscribe( r => {

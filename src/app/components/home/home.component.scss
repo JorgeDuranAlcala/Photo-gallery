@@ -1,10 +1,12 @@
 main {
     font-size: 16px;
+    width: 100%;
 }
 
 section {
  width: 100%;
  height: 100vh;
+ font-size: 1em;
 }
 
 .container {
@@ -22,6 +24,7 @@ section:nth-of-type(1) {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    text-align: center;
     .input-box {
         width: 39.9375em;
         height: 3em;
@@ -44,15 +47,46 @@ section:nth-of-type(1) {
             width: 5%;
             position: absolute;
             right: 2px;
-            top: 8px;
+            bottom: 5.5px;
             cursor: pointer;
         }
     }
 }
 
-section:nth-of-type(1) > h1 {
+section:nth-of-type(1) h1 {
     font-size: 4em;
-    margin-bottom: 8vmin;
     color: white;
     line-height: 1.24em;
+    font-weight: bold;
+}
+
+section:nth-of-type(1) p {
+    font-size: 1.5em;
+    margin-bottom: 8vmin;
+    color: white;
+}
+
+@media screen and (max-width: 780px) {
+    section {
+        font-size: 8.2px;
+      /*   h1 {
+            font-size: 2.5em;
+            line-height: 1em;
+        }
+
+        p {
+            font-size: 1.1em;
+            line-height: 1.25em;
+        }
+
+        .input-box {
+            max-width: 22em;
+        } */
+    }
+}
+@media screen and (max-width: 576px) {
+    section{
+        font-size: 7px;
+        
+    }
 }

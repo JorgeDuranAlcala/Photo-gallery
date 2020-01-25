@@ -20,7 +20,11 @@
 
 
 <nav class="burger sticky">
-    <input type="text" placeholder="search...." [ngClass]="{'d-none': !trigger}">
+    <input type="text" placeholder="search...." [ngClass]="{'d-none': !trigger}"
+    [(ngModel)]="searchText"  
+    name="searchText"
+    (keyup)="searchPhoto()"
+    >
     <img src="assets/img/menu.svg" (click)="toggleEffect()">
     <ul class="navbar text-align-center" #navbar [ngClass]="{'d-none': trigger}">
         <li><a [routerLink]="['/']" routerLink="active">Home</a></li>

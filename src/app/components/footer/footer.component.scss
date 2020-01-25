@@ -2,20 +2,22 @@
 	width: 100%;
 }
 
-
-.footer .row {
-	padding: 4vmin 8vmin;
+footer {
+	background: rgba(0,0,0,0.81);
+	overflow: hidden;
+	padding: 14vmin 18vmin;
 }
 
-.footer .row ul li {
-	color: white;
-	text-decoration: none;
-	list-style: none;
-	font-family: 'Roboto';
-	font-size: 1.5em;
-	text-transform: uppercase;
+footer p>span {
+	
 }
 
-.footer:last-child {
-	background:rgba(0,0,0,0.9);
+footer input {
+	border: none !important;
 }
+
+footer input::placeholder {
+
+		color: white !important;
+}
+

@@ -1,5 +1,6 @@
+<!-- <!-- <div class="container">
 <div class="row justify-content-center">
-  <div class="col-md-4">
+  <div class="col-md-4 ">
       <div class="card animated fadeInDown slow">
         <div class="card-body">
           <form class="form" (submit)="onSubmit(title, description, photoSelected)">
@@ -21,5 +22,21 @@
       </div>
     </div>
   </div>
+  </div> -->
   
-  <div>Icons made by <a href="https://www.flaticon.com/authors/inipagistudio" title="inipagistudio">inipagistudio</a> from <a href="https://www.flaticon.com/"             title="Flaticon">www.flaticon.com</a></div>
+ <!-- <div>Icons made by <a href="https://www.flaticon.com/authors/inipagistudio" title="inipagistudio">inipagistudio</a> from <a href="https://www.flaticon.com/"             title="Flaticon">www.flaticon.com</a></div> -->
+
+ <div class="contenedor">
+   <div class="card">
+     <div class="card-body">
+       <form >
+           <input type="text" class="form-control">
+          <textarea class="form-control" name="" id="" cols="5" rows="5" required 
+          placeholder="description" #description
+          ></textarea>
+        <img [src]=" photoSelected || 'assets/img/upload.svg' " class="img-fluid" (click)="inputFile.click()" alt="upload-icon">
+        <button class="btn btn-primary btn-block" type="submit" >Upload</button>
+       </form>
+     </div>
+   </div>
+ </div>

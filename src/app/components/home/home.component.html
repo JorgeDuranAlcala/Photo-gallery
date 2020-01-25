@@ -3,6 +3,7 @@
         <h1 class="animated fadeInUp ">
             Upload your Favorite photos
         </h1>
+        <p>You can have all of your favorites photos on your own gallery</p>
         <div class="input-box">
             <input type="text" placeholder="search...." 
             name="searchText" #searchText
@@ -13,7 +14,7 @@
             >
         </div>
     </section>
-        <div class="container p-4" data-sal="fade" data-sal-easing="ease-out-back">
+        <div class="container p-4">
             <div class="row">
                 <div class="card-columns">
                     <div class="card shadow-lg"  *ngFor="let photo of _Album; let i=index">

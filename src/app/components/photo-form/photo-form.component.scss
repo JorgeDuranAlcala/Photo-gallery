@@ -2,14 +2,49 @@ $color-1:#87f708;
 $color-2:#78ffd6;
 
 
-.card {
+/* .card {
     -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.15);
     -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.15);
     box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.15);
+    font-size: 16px;
 }
 
 img {
     position: relative;
-    width: 60%;
-    left: 80px;
+    max-width: 15.625em;
+    width: 80%;
+} */
+
+.contenedor {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    max-width: 500px;
+    width: 90%;
+    margin: 24vmin 0 24vmin 0 !important;
+    .card-body {
+        form {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            img {
+                max-width: 200px;
+                width: 90%;
+            }
+            textarea {
+                margin-top: 4vmin;
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 780px) {
+    
 }
