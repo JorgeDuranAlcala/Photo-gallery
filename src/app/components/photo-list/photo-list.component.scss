@@ -21,3 +21,9 @@ svg rect{
   height: 100vh;
   padding: 4vmin 8vmin;
 }
+
+@media screen and (max-width: 576px) {
+  .card {
+    margin-right: 20vmin !important;
+  }
+}

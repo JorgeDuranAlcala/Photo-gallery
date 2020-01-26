@@ -1,3 +1,5 @@
+$color-5:#00C9FF;
+$colorA: rgba(0, 0, 0, 0.6);
 
 .card {
     -webkit-box-shadow: 0px 15px 25px 0px rgba(0,0,0,0.2);
@@ -6,9 +8,98 @@
 }
 
 .contenedor {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: 'Roboto';
+  text-align: center;
+
+  h2 {
+    font-weight: bold;
+    font-size: 2.5em;
+    margin-bottom: 1.2em;
+  }
+
+  form 
+  { margin-bottom: 8em;
+    width: 18.75em; 
     position: relative;
-    width: 100%;
-    height: 100vh;
-    left: 0;
-    top: 0;
+    height: 50%;
+
+    
+    /* Button */
+
+    input[type="submit"] 
+    {
+      display: block;
+      margin: auto;
+      width: 40%;
+      height: 3em;
+      position: relative;
+      border: none;
+      cursor: pointer;
+      font-family: 'Roboto';
+      font-size: 1.2em;
+      font-weight: bold;
+      color: $colorA;
+      border-radius: 1.25em;
+     // background: darken($color: $color-5, $amount: 25);
+     background: #00C9FF;  /* fallback for old browsers */
+      transition: all .5s ease;
+      &:hover {
+        background: lighten($color: $colorA, $amount: 90);
+        //color: rgba(0, 0, 0, 0.6);
+        color: $color-5;
+        border: 3px solid $color-5;
+        transform: translateY(-10px);
+      }
+    }
+    
+    .input-box {
+      position: relative;
+      width: 100%;
+      height: 10%;
+      margin: 3em 1em;
+      input {
+        width: 100%;
+        height: 100%;
+        border: none;
+        outline: none;
+        margin-bottom: 1.875em;
+        border-bottom: 2px solid $colorA;
+        padding: 0 1em;
+      }
+
+      
+      label {
+        position: absolute;
+        left: 0.3125em;
+        top: 0;
+        width: 100%;
+        pointer-events: none;
+      transition: all 0.5s ease;
+      text-align: left;
+    }
+    
+    input:focus ~ label, 
+    input:valid ~ label {
+      top: -1.6em;
+      left: 0;
+      color: $color-5;
+    }
+    
+    input:focus, input:valid {
+      border-bottom: 3px solid $color-5;
+    }
+    
+    
+  }
+  }
 }

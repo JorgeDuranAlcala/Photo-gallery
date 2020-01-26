@@ -19,6 +19,13 @@
     }
 } 
 
+.con{
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 20px;
+}
+
 // Modal
 
 .modal {
@@ -28,21 +35,45 @@
     position: fixed;
     left: 0;
     right: 0;
-    z-index: 1;
+    z-index: 99999;
     padding-top: 100px;
-    overflow: auto;
+    overflow: hidden;
     background-color: rgba(0, 0, 0, 0.2);
+    
+    // container-fluid
+
+    
+
+    // row
+
+    .row {
+        justify-content: center;
+        align-items: center;
+        .card {
+            .card-body {
+                h2 {
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+
+    .card-img-top {
+        width: 100%;
+        height: auto;
+    }
 
     // MODAL_CONTENT
 
-    .card {
+    /* .card {
         margin: auto;
         display: block;
-        height: 20%;
+        height: 50%;
         width: 25%;
         position: relative;
         color: #fff;
-       // animation: slide .4s;
+        overflow: hidden;
+        // animation: slide .4s;
         .card-img-top {
             width: 100%;
             height: auto;
@@ -82,7 +113,7 @@
             text-decoration: none;
             cursor: pointer;
         }
-    }
+    } */
 }
 
 //animations
@@ -96,9 +127,6 @@
 // responsive 700px screen
 
 @media screen and (max-width: 700px) {
-    .modal-content {
-        width: 100%;
-    }
 }
 
 //.modal-content, .caption { animation: zoom; animation-duration: 2s; }

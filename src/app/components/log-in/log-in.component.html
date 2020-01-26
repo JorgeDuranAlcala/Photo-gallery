@@ -1,4 +1,4 @@
-<div class="contenedor">
+<!-- <div class="contenedor">
     
     <div class="row justify-content-center">
         <div class="col-md-4">
@@ -23,5 +23,20 @@
         </div>
     </div>
 </div>
+</div> -->
+
+<div class="contenedor">
+    <form (submit)="logInuser(email,password)">
+        <h2>Log In</h2>
+        <div class="input-box">
+            <input type="text" minlength="6" autocomplete="none"   name="" required #email>
+            <label>Email</label>
+        </div>
+        <div class="input-box">
+            <input type="password" minlength="6" autocomplete="none"   name="" required #password>
+            <label>Password</label>
+        </div>
+        <input type="submit" value="submit">
+    </form >
 </div>
 

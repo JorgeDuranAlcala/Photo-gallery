@@ -11,11 +11,29 @@
 
 <div class="modal" [ngClass]="{'d-none': reveal, 'd-block': !reveal}" *ngFor="let photo of photos" (click)="close()">
     <!-- close button -->
-        <div class="card animated fadeIn">
+        <!-- <div class="card animated fadeIn">
             <img [src]=" 'http://localhost:3100/' + src " alt="" class="card-img-top" #photoPreview>
             <div class="card-footer ">
                 <p>{{ caption }}</p>
                 <button class="close">&times;</button>   
+            </div>
+        </div> -->
+        
+        <div class="con mb-4">
+            <div class="row">
+                <div class="col-4">
+                    <div class="row">
+                        <div class="col-md-10">
+                            <div class="card">
+                                <img [src]="'http://localhost:3100/' + src" alt="lightbox-img" class="card-img-top">
+                                <div class="card-body">
+                                    <h2>{{ caption }}</h2>
+                                    <button class="close">&times;</button>   
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 </div>

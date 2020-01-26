@@ -51,11 +51,13 @@ $colorA: rgba(0, 0, 0, 0.6);
       color: $colorA;
       border-radius: 1.25em;
       background: darken($color: $color-5, $amount: 25);
+      transition: all .5s ease;
       &:hover {
         background: lighten($color: $colorA, $amount: 90);
         //color: rgba(0, 0, 0, 0.6);
         color: $color-5;
         border: 3px solid $color-5;
+        transform: translateY(-10px);
       }
     }
     
@@ -87,7 +89,7 @@ $colorA: rgba(0, 0, 0, 0.6);
     
     input:focus ~ label, 
     input:valid ~ label {
-      top: -1.1em;
+      top: -1.6em;
       left: 0;
       color: $color-5;
     }
