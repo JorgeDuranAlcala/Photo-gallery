@@ -6,3 +6,10 @@ export interface Users {
     password: string;
     token: string;
 }
+
+export interface IProfile {
+    created_at: string;
+    _id?: string;
+    username: string;
+    email: string;
+}

@@ -12,7 +12,7 @@ import { SearchComponent } from './components/search/search.component';
 
 const routes: Routes = [
   { path:'', redirectTo: 'home', pathMatch:'full'},
-  { path: 'home', component: HomeComponent },
+  { path: 'home', component: HomeComponent},
   { path:'photos', component: PhotoListComponent, canActivate: [AuthGuard] , data: { animation: 'isRight' }  },
   { path:'addPhotos', component: PhotoFormComponent, data: { animation: 'isLeft' }  , canActivate: [AuthGuard] },
   { path:'previewPhoto/:id', component: PhotoPreviewComponent, data: { animation: 'isLeft' } },

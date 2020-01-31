@@ -26,7 +26,7 @@ img {
 .card {
     max-width: 500px;
     width: 90%;
-    margin: 24vmin 0 24vmin 0 !important;
+    margin: 40vmin 0 30vmin 0 !important;
     .card-body {
         form {
             display: flex;
@@ -36,6 +36,7 @@ img {
             img {
                 max-width: 200px;
                 width: 90%;
+                margin-bottom: 4vmin;
             }
             textarea {
                 margin-top: 4vmin;

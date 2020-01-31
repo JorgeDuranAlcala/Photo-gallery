@@ -82,7 +82,7 @@ $color-6: rgb(241, 229, 229);
 }
 
 .sticky {
-  position: sticky;
+  position: fixed;
   top: 0;
   width: 100%;
   z-index: 1000;

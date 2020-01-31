@@ -1,18 +1,19 @@
-<div class="container">
+<div class="contenedor">
     <div class="row">
     
-        <div class="col-4 animated fadeInDown slow">
+        <div class="col-md-3  m-4 animated fadeInDown slow" >
             <img class="img-fluid p-2" [src]=" photoSelected || 'http://localhost:3100/'+ photoToEdit.imagePath" 
             (click)="imageToUpdate.click()"
             alt="no image">
             <div class="row justify-content-center">
-                <div class="col-4 p-2">
-                    <div (click)="deletePhoto()" class="btn btn-danger btn-block">Delete</div>
+                <div class="col-6">
+                    <button class="btn btn-danger btn-block" (click)="deletePhoto()">delete</button>
                 </div>
             </div>
         </div>
                 
-        <div class="col-8 p-4">
+
+        <div class="col-md-6 p-4">
             <div class="card animated fadeInDown slow">
                 <div class="card-body">
                         <form class="form" (submit)="updatePhoto(title, description)" >

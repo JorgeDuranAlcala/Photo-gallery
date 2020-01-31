@@ -7,7 +7,7 @@ import { fader, slider } from "./animation";
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
   animations: [
-    fader
+    slider
   ]
 })
 export class AppComponent {

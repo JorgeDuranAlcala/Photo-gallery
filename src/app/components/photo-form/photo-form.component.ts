@@ -33,7 +33,6 @@ export class PhotoFormComponent implements OnInit {
   onSubmit(title: HTMLInputElement, description: HTMLTextAreaElement): boolean {
       this.service.addPhoto(title.value, description.value, this.file)
       .subscribe( r => {
-        console.log(r)
         this.router.navigate(['/photos'])
       },
       error => console.log(error))

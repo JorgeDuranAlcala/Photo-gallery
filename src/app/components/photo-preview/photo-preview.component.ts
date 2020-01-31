@@ -3,6 +3,7 @@ import { PhotoService } from 'src/app/services/photo.service';
 import { ActivatedRoute, Router } from "@angular/router";
 import { IPhoto } from 'src/app/interfaces/Photo';
 import { HtmlInputEvent } from 'src/app/interfaces/inputEvent';
+import swal from "sweetalert2"
 
 
 @Component({
@@ -34,7 +35,7 @@ export class PhotoPreviewComponent implements OnInit {
     this.activatedRoute.params.subscribe( params => {
         this.service.deletePhoto(params.id)
         .subscribe( res => {
-            this.router.navigate(['/home'])
+            this.router.navigate(['/photos'])
         }, error => console.log(error))
     })
   }
@@ -43,7 +44,7 @@ export class PhotoPreviewComponent implements OnInit {
       this.activatedRoute.params.subscribe( parms => {
         this.service.updatePhoto(parms.id, title.value, description.value, this.file)
         .subscribe( res => {
-          this.router.navigate(['/home'])
+          this.router.navigate(['/photos'])
         }, error => console.log(error))
       })
       return  false

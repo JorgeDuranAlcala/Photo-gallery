@@ -32,7 +32,13 @@ export class UserService {
       this.route.navigate(['/home'])
     }
 
+    
     getToken() {
       return localStorage.getItem('token')
     }
+
+    getProfile() {
+      return this.http.get(`${this.url}/profile`);
+    }
+
 }
