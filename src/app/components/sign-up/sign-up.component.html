@@ -31,24 +31,24 @@
 
 
 <div class="contenedor">
-    <form (submit)="registerNewUser(username,email,password)">
+    <form>
         <h2>Sign Up</h2>
         <div class="input-box">
-            <input type="text"  minlength="6" name="" required>
+            <input type="text"  minlength="6" name="" required #username>
             <label>Username</label>
         </div>
         <div class="input-box">
-            <input type="text" minlength="6" autocomplete="none"   name="" required>
+            <input type="text" minlength="6" autocomplete="none"  #email required>
             <label>Email</label>
         </div>
         <div class="input-box">
-            <input type="password" minlength="6" autocomplete="none"   name="" required>
+            <input type="password" minlength="6" autocomplete="none" #password required>
             <label>Password</label>
         </div>
         <div class="input-box">
             <input type="password"  minlength="6"  name="" required>
             <label>repeat Password</label>
         </div>
-        <input type="submit" value="submit">
+        <input type="submit" value="submit" (click)="registerNewUser(username,email,password)">
     </form >
 </div>

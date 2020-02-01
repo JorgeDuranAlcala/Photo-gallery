@@ -20,7 +20,11 @@ export class LogInComponent implements OnInit {
       .subscribe( r => {
         localStorage.setItem('token', r.token)
         this.route.navigate(['/photos'])
-      }, e => console.error(e))
+      }, error => { 
+        console.log(error.error)
+        if(error.error.message) return swal.fire({title: `${error.error.message}`, icon: 'error'});
+        swal.fire({title: `${error.error}`, icon: 'error'})
+    })
 
       return false
   }

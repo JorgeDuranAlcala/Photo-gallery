@@ -3,7 +3,7 @@ import { PhotoService } from 'src/app/services/photo.service';
 import { ActivatedRoute, Router } from "@angular/router";
 import { IPhoto } from 'src/app/interfaces/Photo';
 import { HtmlInputEvent } from 'src/app/interfaces/inputEvent';
-import swal from "sweetalert2"
+import swal from "sweetalert2";
 
 
 @Component({
@@ -32,12 +32,47 @@ export class PhotoPreviewComponent implements OnInit {
   }
 
   deletePhoto() {
-    this.activatedRoute.params.subscribe( params => {
-        this.service.deletePhoto(params.id)
-        .subscribe( res => {
-            this.router.navigate(['/photos'])
-        }, error => console.log(error))
+    
+    const swalWithBoostrapButtons = swal.mixin({
+      customClass: {
+        confirmButton: 'btn btn-danger',
+        cancelButton: 'btn btn-info m-4'
+      },
+      buttonsStyling: false,
     })
+
+    swalWithBoostrapButtons.fire({
+      title: 'Are you sure?',
+      text: `you won't be able to reverse`,
+      icon: 'warning',
+      showCancelButton: true,
+      cancelButtonText: 'No, cancel',
+      confirmButtonColor: 'red',
+      confirmButtonText: 'yes, delete it',
+      cancelButtonColor: 'blue',
+    }).then( result => {
+      if(result.value) {
+        swal.fire({
+          title: 'image deleted',
+          text: 'your image has been deleted',
+          icon: 'success'
+        })
+         this.activatedRoute.params.subscribe( params => {
+                this.service.deletePhoto(params.id)
+                .subscribe( res => {
+                    this.router.navigate(['/photos'])
+               }, error => console.log(error))
+         })
+        }
+        else if(result.dismiss === swal.DismissReason.cancel) {
+          swal.fire({
+            title: `canceled`,
+            text: 'Your image is safe',
+            icon: 'error'
+          })
+        }
+    })
+    
   }
 
   updatePhoto(title: HTMLInputElement, description: HTMLTextAreaElement): boolean {

@@ -25,15 +25,15 @@
 </div>
 </div> -->
 
-<div class="contenedor">
+<div class="contenedor mt-4">
     <form (submit)="logInuser(email,password)">
         <h2>Log In</h2>
         <div class="input-box">
-            <input type="text" minlength="6" autocomplete="none"   name="" required #email>
+            <input type="text" minlength="6" autocomplete="none"  required #email>
             <label>Email</label>
         </div>
         <div class="input-box">
-            <input type="password" minlength="6" autocomplete="none"   name="" required #password>
+            <input type="password" minlength="6" autocomplete="none" required #password>
             <label>Password</label>
         </div>
         <input type="submit" value="submit">

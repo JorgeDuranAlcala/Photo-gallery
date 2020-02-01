@@ -19,7 +19,8 @@ export class SignUpComponent implements OnInit {
 
     const swalWithBootstrapButtons = swal.mixin({
       customClass: {
-        cancelButton: 'btn-danger'
+        cancelButton: 'btn btn-danger',
+        confirmButton: 'btn btn-primary m-4'
       },
     })
 
@@ -30,7 +31,6 @@ export class SignUpComponent implements OnInit {
       confirmButtonText: 'Accept',
       showCancelButton: true,
       cancelButtonText: 'cancel',
-      customClass: { cancelButton: 'btn btn-danger', confirmButton: 'btn btn-success' }
     }).then(result => {
       if(result.value) {
         this.service.registerUser(username.value, email.value, password.value)
@@ -39,7 +39,10 @@ export class SignUpComponent implements OnInit {
             localStorage.setItem('token', r.token)
             this.route.navigate(['/logIn'])
             }, 
-          error => swal.fire({title: error.error.message, icon: 'error'}))
+          error => {
+            if(error.error.message) return swal.fire({title: `${error.error.message}`, icon: 'error'});
+            swal.fire({title: error.error, icon: 'error'})
+          }) 
       } else if(result.dismiss === swal.DismissReason.cancel) {
           swal.fire({title: 'Canceled', icon: 'warning'})
       }
