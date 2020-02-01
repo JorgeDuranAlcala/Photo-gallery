@@ -10,7 +10,10 @@ import swal from "sweetalert2";
 })
 export class LogInComponent implements OnInit {
 
-  constructor(private service: UserService, private route: Router) { }
+  constructor(private service: UserService, 
+              private route: Router,
+             ) { }
+
 
   ngOnInit() {
   }
@@ -21,7 +24,6 @@ export class LogInComponent implements OnInit {
         localStorage.setItem('token', r.token)
         this.route.navigate(['/photos'])
       }, error => { 
-        console.log(error.error)
         if(error.error.message) return swal.fire({title: `${error.error.message}`, icon: 'error'});
         swal.fire({title: `${error.error}`, icon: 'error'})
     })

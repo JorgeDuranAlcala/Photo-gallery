@@ -15,6 +15,7 @@ $colorA: rgba(0, 0, 0, 0.6);
   top: 0;
   font-size: 16px;
   display: flex;
+  margin-top: 8vmin;
   justify-content: center;
   align-items: center;
   flex-direction: column;
@@ -29,11 +30,9 @@ $colorA: rgba(0, 0, 0, 0.6);
 
   form 
   { margin-bottom: 8em;
-    width: 18.75em; 
+    width: 20em; 
     position: relative;
     height: 50%;
-
-    
     /* Button */
 
     input[type="submit"] 
@@ -87,15 +86,19 @@ $colorA: rgba(0, 0, 0, 0.6);
       text-align: left;
     }
     
-    input:focus ~ label, 
-    input:valid ~ label {
+    input:focus ~ label {
       top: -1.6em;
       left: 0;
       color: $color-5;
     }
+
+    input:valid ~ label {
+      display: none;
+    }
     
     input:focus, input:valid {
       border-bottom: 3px solid $color-5;
+      
     }
     
     

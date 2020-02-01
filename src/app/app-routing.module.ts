@@ -8,6 +8,7 @@ import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { LogInComponent } from './components/log-in/log-in.component';
 import { AuthGuard } from './auth/auth.guard';
 import { SearchComponent } from './components/search/search.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 
 const routes: Routes = [
@@ -18,7 +19,8 @@ const routes: Routes = [
   { path:'previewPhoto/:id', component: PhotoPreviewComponent, data: { animation: 'isLeft' } },
   { path: 'search/:text', component: SearchComponent },
   { path:'signUp', component: SignUpComponent, data: { animation: 'isLeft' } },
-  { path: 'logIn', component: LogInComponent, data: { animation: 'isLeft' } }
+  { path: 'logIn', component: LogInComponent, data: { animation: 'isLeft' } },
+  { path: '**', component: NotFoundComponent }
 ];
 
 @NgModule({

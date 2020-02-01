@@ -15,6 +15,8 @@ export class HomeComponent implements OnInit {
   photos: IPhoto[];
   _Album: IAlbum[] = [];
   searchText: string = "";
+  albumIsEmpty: boolean;  
+
 
   constructor(private service: PhotoService,
               private _lightBox: Lightbox,
@@ -41,7 +43,8 @@ export class HomeComponent implements OnInit {
           }
           this._Album.push(album)
       })
-      console.log(this._Album);
+      
+      this.albumIsEmpty = !!this._Album.length;
     })
 
     

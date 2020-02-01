@@ -10,12 +10,13 @@ import swal from "sweetalert2";
 })
 export class SignUpComponent implements OnInit {
 
-  constructor(private service: UserService, private route: Router ) { }
+  constructor(private service: UserService, 
+              private route: Router ) { }
 
   ngOnInit() {
   }
 
-  registerNewUser(username: HTMLInputElement, email: HTMLInputElement, password: HTMLInputElement): boolean {
+  registerNewUser(username: HTMLInputElement, email: HTMLInputElement, password: HTMLInputElement, repeatPassword: HTMLInputElement): boolean {
 
     const swalWithBootstrapButtons = swal.mixin({
       customClass: {
@@ -33,28 +34,31 @@ export class SignUpComponent implements OnInit {
       cancelButtonText: 'cancel',
     }).then(result => {
       if(result.value) {
-        this.service.registerUser(username.value, email.value, password.value)
-        .subscribe( 
+        if (password.value !== repeatPassword.value) 
+        { 
+          swal.fire({title: `Both password need be equal`, icon: 'error' }) 
+        }
+        else {
+
+          this.service.registerUser(username.value, email.value, password.value)
+          .subscribe( 
           r  => {
-            localStorage.setItem('token', r.token)
+            //localStorage.setItem('token', r.token)
+            swal.fire({title: `congratulations ${username.value}`, text: `You're signed up`, icon: 'success', timer: 2000})
             this.route.navigate(['/logIn'])
-            }, 
+          }, 
           error => {
             if(error.error.message) return swal.fire({title: `${error.error.message}`, icon: 'error'});
-            swal.fire({title: error.error, icon: 'error'})
+            swal.fire({title: `error`, text: error.error, icon: 'error'})
           }) 
-      } else if(result.dismiss === swal.DismissReason.cancel) {
+        }
+        } else if(result.dismiss === swal.DismissReason.cancel) {
           swal.fire({title: 'Canceled', icon: 'warning'})
       }
-    })  
-
-
-
+      })  
+      
       return false
   }
 
-  test() {
-    
-  }
 
 }

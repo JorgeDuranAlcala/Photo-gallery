@@ -14,7 +14,7 @@
             >
         </div>
     </section>
-        <div class="container p-4">
+        <div class="container p-4" *ngIf="albumIsEmpty; else elseTemplate">
             <div class="row">
                 <div class="card-columns">
                     <div class="card shadow-lg"  *ngFor="let photo of _Album; let i=index">
@@ -24,6 +24,12 @@
                 </div>
             </div>
         </div>
+        <ng-template #elseTemplate>
+            <div class="elseTemplate">
+                <h3>Upload a photo right now!</h3>
+                <a [routerLink]="['/addPhotos']">Upload</a>
+            </div>
+        </ng-template>
 </main>
 
 

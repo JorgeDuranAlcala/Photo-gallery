@@ -20,6 +20,7 @@ export class SearchComponent implements OnInit {
   reveal: boolean = true;
   src: string;
   caption: string;
+  photoIsEmpty: boolean;
   @ViewChild('photoPreview', {static:false}) photoPreview: ElementRef;
 
   constructor(private route: ActivatedRoute,
@@ -34,7 +35,6 @@ export class SearchComponent implements OnInit {
     this.route.params
     .subscribe(parms => {
       this.text = parms['text'];
-      console.log(this.text);
       
       let str = this.text.substring(1, this.text.length);
       if(str === '') {
@@ -45,20 +45,8 @@ export class SearchComponent implements OnInit {
     this.service.allPhotos()
     .subscribe( r => {
       this.photos = r
-      console.log(this.photos)
-      /* this.photos.forEach((value, index) => {
-  
-        const src = `http://localhost:3100/${value.imagePath}`;
-        const caption =`${value.title}<br>${value.description}`;
-        const thumb = `${src}`;
-  
-        const album = {
-              src,
-              caption,
-              thumb
-          }
-          this._Album.push(album)
-        }) */
+      this.photoIsEmpty = !!this.photos.length;
+      console.log(this.photoIsEmpty)
       })
 
   }

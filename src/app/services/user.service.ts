@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Users } from '../interfaces/users.interface';
+import { Users, IProfile } from '../interfaces/users.interface';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 
 @Injectable({
@@ -28,6 +29,7 @@ export class UserService {
     }
 
     logoutUser() {
+      Swal.fire({title: `you're logout`, icon: 'success', timer: 2000})
       localStorage.removeItem('token')
       this.route.navigate(['/home'])
     }
@@ -38,7 +40,7 @@ export class UserService {
     }
 
     getProfile() {
-      return this.http.get(`${this.url}/profile`);
+      return this.http.get<IProfile>(`${this.url}/profile`);
     }
 
 }

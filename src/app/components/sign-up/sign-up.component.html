@@ -34,7 +34,7 @@
     <form>
         <h2>Sign Up</h2>
         <div class="input-box">
-            <input type="text"  minlength="6" name="" required #username>
+            <input type="text"  minlength="6" required #username>
             <label>Username</label>
         </div>
         <div class="input-box">
@@ -46,9 +46,9 @@
             <label>Password</label>
         </div>
         <div class="input-box">
-            <input type="password"  minlength="6"  name="" required>
+            <input type="password" minlength="6"  #repeatPassword required>
             <label>repeat Password</label>
         </div>
-        <input type="submit" value="submit" (click)="registerNewUser(username,email,password)">
+        <input type="submit" value="submit" (click)="registerNewUser(username,email,password, repeatPassword)">
     </form >
 </div>

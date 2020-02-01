@@ -1,6 +1,46 @@
+$color-5:#78ffd6;
+
 main {
     font-size: 16px;
     width: 100%;
+    .elseTemplate {
+        height: 100vh;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        h3 {
+            font-size: 3.5em;
+            font-weight: bold;
+          }
+        
+          a {
+            text-decoration: none;
+            max-width: 12.5em;
+            max-height: 2em;
+            width: 90%;
+            height: 100%;
+            font-weight: bold;
+            border-radius: 20px;
+            margin-top: 0.5em;
+            background: darken($color: $color-5, $amount: 25);
+            color: rgba(0, 0, 0, 0.8);
+            text-align: center;
+            padding-top: 1vmin;
+            font-size: 2em;
+            transition: all .7s ease;
+            box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.2);
+        
+            &:hover {
+              background: darken($color: $color-5, $amount: 35);
+              transform: translateY(-18px);
+              box-shadow: 0px 15px 25px 0px rgba(0, 0, 0, 0.2);
+              color: whitesmoke;
+            }
+        
+          }
+    }
 }
 
 section {
@@ -14,6 +54,8 @@ section {
     transition-duration: 2s;
     animation-duration: 2s;
 }
+
+
 
 
 section:nth-of-type(1) {
@@ -31,8 +73,8 @@ section:nth-of-type(1) {
         position: relative;
         input[type="text"] {
             color:hsla(0, 0%, 0%, 0.87);
-            height: 100%;
-            width: 100%;
+            height: 90%;
+            width: 90%;
             border: none;
             margin-left: 1em;
             border: 1px solid rgba(0, 0, 0, 0.25);
@@ -41,13 +83,17 @@ section:nth-of-type(1) {
             padding: 1em;
             outline: none;
             border-radius: 1.25em;
+            transition: all .8s ease;
+            &:focus {
+                width: 100%;
+            }
         }
         
         img {
             width: 5%;
             position: absolute;
-            right: 2px;
-            bottom: 5.5px;
+            right: 5vmin;
+            bottom: 0.625em;
             cursor: pointer;
         }
     }
