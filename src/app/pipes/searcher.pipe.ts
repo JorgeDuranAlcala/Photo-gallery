@@ -17,7 +17,6 @@ export class SearcherPipe implements PipeTransform {
           
           if(photo.title.includes(args.toLocaleLowerCase())) {
             filteredPhotos.push(photo)
-            console.log(photo)
           } 
           
         })

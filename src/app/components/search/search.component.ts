@@ -46,7 +46,6 @@ export class SearchComponent implements OnInit {
     .subscribe( r => {
       this.photos = r
       this.photoIsEmpty = !!this.photos.length;
-      console.log(this.photoIsEmpty)
       })
 
   }
